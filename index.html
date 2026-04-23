@@ -1,396 +1,882 @@
-<!DOCTYPE html>
-<html lang="fr">
+
+<!doctype html>
+<html class="no-js" lang="fr">
+
+<!doctype html>
+<html class="no-js" lang="fr">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
   <title>ISTA L/B</title>
-  <link rel="shortcut icon" type="image/jpg" href="img/logoIsta.png"/>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-  <style>
-    *{
-      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    }
-  </style>
-</head>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="index,follow">
 
-<body class="bg-gray-50 text-gray-800" x-data="{open:false}">
+    <link rel="canonical" href="" />
 
-<!-- NAVBAR -->
-<header class="bg-blue-900 text-white shadow fxed fixed w-full z-50" x-data="{open:false}">
-  <div class="max-w-7xl mx-auto flex justify-between items-center p-4 py-2 px-6">
-    <h1 class="text-xl font-bold flex items-center"><img src="img/logoIsta.png" class="mx-2" width="60" alt="">ISTA L/B</h1>
-
-    <!-- Desktop Menu -->
-    <nav class="hidden md:flex space-x-6">
-      <a href="index.html" class="hover:text-yellow-400 bg-white/40 rounded p-1 px-3">Accueil</a>
-      <a href="appropo.html" class="hover:text-yellow-400 bg-white/40 rounded p-1 px-3">À propos</a>
-      <a href="home.html#facultes" class="hover:text-yellow-400 bg-white/40 rounded p-1 px-3">Facultés</a>
-      <a href="home.html#contact" class="hover:text-yellow-400 bg-white/40 rounded p-1 px-3">Contact</a>
-    </nav>
-
-    <!-- Mobile Button -->
-    <button @click="open = !open" class="md:hidden text-2xl">
-      <i class="fa-solid fa-bars"></i>
-    </button>
-  </div>
-
-  <!-- Mobile Menu -->
-  <div x-show="open" class="md:hidden bg-blue-800 px-6 pb-4 space-y-2">
-    <a href="index.html" class="block">Accueil</a>
-    <a href="appropo.html" class="block">À propos</a>
-    <a href="home.html#facultes" class="block">Facultés</a>
-    <a href="home.html#contact" class="block">Contact</a>
-  </div>
-</header>
-
-<!-- HERO -->
-<section class="relative text-white text-center py-24 bg-cover bg-center bg-fixed" style="background-image: url('img/hero.jpeg');">
-  <div class="absolute inset-0 bg-blue-900/70"></div>
-  <div class="relative z-10 px-4">
-    <h2 class="text-4xl md:text-5xl font-bold mb-4">Bienvenue à l’ISTA L/B</h2>
-    <p class="max-w-2xl mx-auto text-lg">Former les ingénieurs de demain pour un Congo technologique et innovant.</p>
-  </div>
-</section>
-
-<!-- CAROUSEL -->
-<section class="py-12" x-data="carousel()" x-init="start()">
-  <div class="max-w-5xl mx-auto relative overflow-hidden rounded-xl shadow-lg">
-
-    <template x-for="(slide, index) in slides" :key="index">
-      <div x-show="current === index" class="p-10 bg-white text-center transition-all duration-500">
-        <h3 class="text-2xl font-bold text-blue-900 mb-3" x-text="slide.title"></h3>
-        <p class="text-gray-600" x-text="slide.text"></p>
-      </div>
-    </template>
-
-    <button @click="prev()" class="absolute left-2 top-1/2 -translate-y-1/2 bg-blue-900 text-white px-3 py-1 rounded">◀</button>
-    <button @click="next()" class="absolute right-2 top-1/2 -translate-y-1/2 bg-blue-900 text-white px-3 py-1 rounded">▶</button>
-
-  </div>
-</section>
-
-<!-- ANIMATION SECTION -->
-<!-- <section class="relative h-64 overflow-hidden bg-gray-100">
-  <div class="absolute inset-0" id="animationCanvas"></div>
-</section> -->
-
-<!-- PRESENTATION -->
-<section class="grid justify-center items-center py-16 px-3 bg-white" x-data="{open:false}">
-  <h2 class="text-2xl font-bold text-center text-blue-900 mb-10">Présentation</h2>
-
-  <div class="text-justify max-w-4xl">
-
-    <!-- Intro courte -->
-    <p class="bg-gray-100 p-4 border-l-4 border-blue-600">
-      L’Institut Supérieur des Techniques Appliquées (ISTA L/B) est un établissement public d’enseignement supérieur basé à Boma. Créé en 2016, il forme des ingénieurs capables de répondre aux défis technologiques modernes. Dès son origine, l’institut s’est positionné comme un pôle d’excellence académique et technique.
-    </p>
-
-    <!-- Contenu caché -->
-    <div x-show="open" x-transition class="mt-4 text-gray-700 space-y-4">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="ISTA L/B">
+  <meta property="og:description" content="">
+  <meta property="og:url" content="https://www.Istalb.ac.cd/fr/home">
+  <meta property="og:image" content="img/favico.ico">
+  <meta property="og:locale" content="fr_FR">
+        <meta property="og:locale:alternate" content="en_US">
+        <meta property="og:locale:alternate" content="sw_TZ">
+        <meta property="og:locale:alternate" content="es_ES">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ISTA L/B">
+  <meta name="twitter:description" content="">
+  <meta name="twitter:image" content="https://Istalb.ac.cd/img/favico.ico">
       
-      <p>
-        Sa mission principale est de former des ingénieurs et des techniciens hautement qualifiés, dotés de compétences pratiques et théoriques solides. L’établissement met un accent particulier sur l’acquisition des compétences techniques, l’esprit d’analyse et la capacité d’innovation.
-      </p>
+  
+  <!-- favicon
+		======================================== -->
+  <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
 
-      <p>
-        L’ISTA L/B propose une offre de formation diversifiée couvrant plusieurs filières clés comme l’informatique, l’électricité, l’électronique et la mécanique. Chaque faculté allie théorie et pratique pour préparer efficacement les étudiants au monde professionnel.
-      </p>
+  <!-- Bootstrap CSS
+		============================================ -->
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
 
-      <p>
-        L’institut développe également des partenariats académiques et industriels afin de renforcer la qualité de son enseignement et favoriser l’insertion professionnelle de ses diplômés.
-      </p>
-    </div>
+  <!-- Fontawsome CSS
+		============================================ -->
+  <!-- <link rel="stylesheet" href="assets/css/font-awesome.min.css"> -->
+  <!-- CDN font-awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-dyZ88n1bX7Q+2D9qF0n7NLeH2Y+Hz3I+N8iAaRrXbY4LxYfRvH+8abtTE1Pi6jizoU6Yl5S1eBvZL8Cw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <!-- Bouton -->
-    <div class="mt-4 text-center">
-      <button @click="open = !open" class="bg-blue-900 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition">
-        <span x-text="open ? 'Voir moins' : 'Voir plus...'"></span>
-      </button>
-    </div>
+  <!-- Metarial Iconic Font CSS
+		============================================ -->
+  <link rel="stylesheet" href="assets/css/material-design-iconic-font.min.css">
 
-  </div>
-</section>
+  <!-- Plugin CSS
+		============================================ -->
+  <link rel="stylesheet" href="assets/css/plugin.css">
 
-<!-- FACULTES -->
-<section class="bg-white py-16 px-6">
-  <h2 class="text-2xl font-bold text-center text-blue-900 mb-10">Nos Facultés</h2>
+  <!-- Style CSS
+		============================================ -->
+  <link rel="stylesheet" href="assets/css/style.css">
 
-  <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+  <!-- Responsive CSS
+		============================================ -->
+  <link rel="stylesheet" href="assets/css/responsive.css">
 
-    <div class="bg-gray-100 p-6 rounded-xl shadow hover:scale-105 transition border border-gray-900/40">
-      <i class="fa-solid fa-laptop-code text-4xl text-green-500 mb-2"></i>
-      <h3 class="font-bold text-lg">Informatique</h3>
-      <p>Réseaux, Développement, cybersécurité et IA.</p>
-    </div>
+  <!-- Tailwind CSS -->
+  <!-- <link rel="stylesheet" href="assets/css/tailwind.min.css"> -->
 
-    <div class="bg-gray-100 p-6 rounded-xl shadow hover:scale-105 transition border border-gray-900/40">
-      <i class="fa-solid fa-bolt text-4xl text-yellow-500 mb-2"></i>
-      <h3 class="font-bold text-lg">Électricité</h3>
-      <p>Production et automatisation.</p>
-    </div>
-
-    <div class="bg-gray-100 p-6 rounded-xl shadow hover:scale-105 transition border border-gray-900/40">
-      <i class="fa-solid fa-microchip text-4xl text-blue-500 mb-2"></i>
-      <h3 class="font-bold text-lg">Électronique</h3>
-      <p>Systèmes embarqués et télécoms.</p>
-    </div>
-
-    <div class="bg-gray-100 p-6 rounded-xl shadow hover:scale-105 transition border border-gray-900/40">
-      <i class="fa-solid fa-gears text-4xl text-indigo-500 mb-2"></i>
-      <h3 class="font-bold text-lg">Mécanique</h3>
-      <p>Conception et maintenance industrielle.</p>
-    </div>
-
-    <div class="bg-gray-100 p-6 rounded-xl shadow hover:scale-105 transition border border-gray-900/40">
-      <i class="fa-solid fa-heartbeat text-4xl text-red-500 mb-2"></i>
-      <h3 class="font-bold text-lg">Maintenance médical</h3>
-      <p>Maintenance des appareils médicals</p>
-    </div>
-
-    <div class="bg-gray-100 p-6 rounded-xl shadow hover:scale-105 transition border border-gray-900/40">
-      <i class="fa-solid fa-hard-hat text-4xl text-gray-500 mb-2"></i>
-      <h3 class="font-bold text-lg">Construction</h3>
-      <p>Conception et réalisation de bâtiments.</p>
-    </div>
-
-  </div>
-</section>
-
-<!-- GALERIE -->
-<section class="py-16 bg-gray-100">
-  <h2 class="text-2xl font-bold text-center text-blue-900 mb-10">
-    Galerie de l'ISTA
-  </h2>
-
-  <div class="overflow-hidden">
-    <div 
-      id="gallery"
-      class="flex gap-6 px-6 cursor-grab active:cursor-grabbing overflow-x-auto scroll-smooth"
-    >
-
-      <!-- Image -->
-      <div class="min-w-[200px] h-[200px] rounded-full overflow-hidden flex-shrink-0 shadow-lg">
-        <img src="img/gallerie1.jpeg" class="w-full h-full object-cover">
-      </div>
-
-      <div class="min-w-[200px] h-[200px] rounded-full overflow-hidden flex-shrink-0 shadow-lg">
-        <img src="img/gallerie2.jpeg" class="w-full h-full object-cover">
-      </div>
-
-      <div class="min-w-[200px] h-[200px] rounded-full overflow-hidden flex-shrink-0 shadow-lg">
-        <img src="img/gallerie3.jpeg" class="w-full h-full object-cover">
-      </div>
-
-      <div class="min-w-[200px] h-[200px] rounded-full overflow-hidden flex-shrink-0 shadow-lg">
-        <img src="img/gallerie4.jpeg" class="w-full h-full object-cover">
-      </div>
-
-      <div class="min-w-[200px] h-[200px] rounded-full overflow-hidden flex-shrink-0 shadow-lg">
-        <img src="img/gallerie5.jpeg" class="w-full h-full object-cover">
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<footer class="bg-gray-900 text-white pt-12 pb-6">
-
-  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8">
-
-    <!-- AUTRES LIENS -->
-    <div>
-      <h3 class="text-lg font-semibold mb-4">Autres liens</h3>
-      <ul class="space-y-2 text-gray-300">
-        <li><a href="#" class="hover:text-white">Accueil</a></li>
-        <li><a href="#" class="hover:text-white">Contact</a></li>
-        <li><a href="#" class="hover:text-white">FUTURIS</a></li>
-        <li><a href="#" class="hover:text-white">Les revues</a></li>
-      </ul>
-    </div>
-
-    <!-- RESEAUX -->
-    <div>
-      <h3 class="text-lg font-semibold mb-4">Suivez-nous</h3>
-      <div class="flex space-x-4">
-        <div class="bg-blue-800/40 p-3 rounded-lg hover:bg-blue-700 cursor-pointer">
-          <i class="fab fa-facebook-f"></i>
-        </div>
-        <div class="bg-blue-800/40 p-3 rounded-lg hover:bg-blue-700 cursor-pointer">
-          <i class="fab fa-x-twitter"></i>
-        </div>
-        <div class="bg-blue-800/40 p-3 rounded-lg hover:bg-blue-700 cursor-pointer">
-          <i class="fab fa-linkedin-in"></i>
-        </div>
-        <div class="bg-blue-800/40 p-3 rounded-lg hover:bg-blue-700 cursor-pointer">
-          <i class="fab fa-youtube"></i>
-        </div>
-      </div>
-    </div>
-
-    <!-- CONTACT -->
-    <div>
-      <h3 class="text-lg font-semibold mb-4">Contact</h3>
-      <p class="text-gray-300">Institut Supérieur des techniques appliquées</p>
-      <p class="text-gray-300">Boma - R D Congo</p>
-      <p class="text-gray-300 mt-2">Tél : +243 820 908 486</p>
-      <p class="text-gray-300">Email : direction@istalb.ac</p>
-    </div>
-
-  </div>
-
-  <!-- SEPARATOR -->
-  <div class="border-t border-blue-800 mt-10 pt-8">
-
-    <!-- SOCIAL CARDS -->
-    <div class="max-w-7xl mx-auto px-6">
-      <h3 class="text-lg font-semibold mb-6">Suivez-nous sur les réseaux</h3>
-
-      <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
-
-        <div class="bg-blue-800/40 p-6 rounded-xl text-center hover:bg-blue-700 transition">
-          <i class="fab fa-facebook-f text-3xl mb-3"></i>
-          <h4 class="font-semibold">Facebook</h4>
-          <a href="#" class="text-blue-300 text-sm">Voir la page →</a>
-        </div>
-
-        <div class="bg-blue-800/40 p-6 rounded-xl text-center hover:bg-blue-700 transition">
-          <i class="fab fa-x-twitter text-3xl mb-3"></i>
-          <h4 class="font-semibold">X (Twitter)</h4>
-          <a href="#" class="text-blue-300 text-sm">Voir la page →</a>
-        </div>
-
-        <!-- <div class="bg-blue-800/40 p-6 rounded-xl text-center hover:bg-blue-700 transition">
-          <i class="fab fa-youtube text-3xl mb-3"></i>
-          <h4 class="font-semibold">YouTube</h4>
-          <a href="#" class="text-blue-300 text-sm">Voir la page →</a>
-        </div> -->
-
-        <div class="bg-blue-800/40 p-6 rounded-xl text-center hover:bg-blue-700 transition">
-          <i class="fab fa-linkedin-in text-3xl mb-3"></i>
-          <h4 class="font-semibold">LinkedIn</h4>
-          <a href="#" class="text-blue-300 text-sm">Voir la page →</a>
-        </div>
-
-      </div>
-    </div>
-
-  </div>
-
-</footer>
-<!-- FOOTER -->
-<footer class="bg-gray-900 text-white text-center py-6">
-  <p>© 2026 ISTA L/B - Tous droits réservés</p>
-</footer>
-
-
-
-<script>
-function carousel() {
-  return {
-    current: 0,
-    slides: [
-      { title: "Excellence académique", text: "Une formation de qualité adaptée aux besoins du marché." },
-      { title: "Innovation technologique", text: "Des programmes modernes orientés vers le numérique." },
-      { title: "Insertion professionnelle", text: "Des diplômés prêts à intégrer le monde du travail." }
-    ],
-    next() {
-      this.current = (this.current + 1) % this.slides.length;
-    },
-    prev() {
-      this.current = (this.current - 1 + this.slides.length) % this.slides.length;
-    },
-    start() {
-      setInterval(() => {
-        this.next();
-      }, 4000);
-    }
-  }
-}
-</script>
-
-<script>
-// Simple canvas animation (geometric shapes + tools bouncing)
-const canvas = document.createElement('canvas');
-const container = document.getElementById('animationCanvas');
-canvas.width = container.offsetWidth;
-canvas.height = container.offsetHeight;
-container.appendChild(canvas);
-const ctx = canvas.getContext('2d');
-
-const shapes = [];
-const icons = ['⚙️','💻','🔌','📡','✈️'];
-
-for(let i=0;i<12;i++){
-  shapes.push({
-    x: Math.random()*canvas.width,
-    y: Math.random()*canvas.height,
-    dx: (Math.random()-0.5)*4,
-    dy: (Math.random()-0.5)*4,
-    size: 20 + Math.random()*20,
-    type: Math.random()>0.5 ? 'circle' : 'icon',
-    icon: icons[Math.floor(Math.random()*icons.length)]
-  });
-}
-
-function draw(){
-  ctx.clearRect(0,0,canvas.width,canvas.height);
-
-  shapes.forEach(s => {
-    ctx.beginPath();
-    if(s.type === 'circle'){
-      ctx.arc(s.x, s.y, s.size/2, 0, Math.PI*2);
-      ctx.fillStyle = '#3b82f6';
-      ctx.fill();
-    } else {
-      ctx.font = `${s.size}px Arial`;
-      ctx.fillText(s.icon, s.x, s.y);
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+<style>
+    html,
+    body {
+        background: #eee;
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        color: #000;
+        margin: 0;
+        padding: 0;
     }
 
-    s.x += s.dx;
-    s.y += s.dy;
+    .swiper {
+        width: 100%;
+        height: 78vh;
+    }
 
-    if(s.x < 0 || s.x > canvas.width) s.dx *= -1;
-    if(s.y < 0 || s.y > canvas.height) s.dy *= -1;
-  });
+    .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 78vh;
+    }
 
-  requestAnimationFrame(draw);
-}
+    .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 
-draw();
-</script>
+    .autoplay-progress {
+        position: absolute;
+        right: 16px;
+        bottom: 16px;
+        z-index: 10;
+        width: 48px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        color: var(--swiper-theme-color);
+    }
+
+    .autoplay-progress svg {
+        --progress: 0;
+        position: absolute;
+        left: 0;
+        top: 0px;
+        z-index: 10;
+        width: 100%;
+        height: 100%;
+        stroke-width: 4px;
+        stroke: var(--swiper-theme-color);
+        fill: none;
+        stroke-dashoffset: calc(125.6 * (1 - var(--progress)));
+        stroke-dasharray: 125.6;
+        transform: rotate(-90deg);
+    }
+
+    .text-anim h1 {
+        opacity: 0;
+        transform: translateX(800px);
+        transition: opacity 2s, transform 2s ease-in-out;
+    }
+
+    .swiper-slide-active .text-anim h1 {
+        opacity: 1;
+        transform: translateX(0);
+    }
+</style>
+
+<body>
+    <!--Main Wrapper Start-->
+<div class="as-mainwrapper">
+    <!--Bg White Start-->
+    <div class="bg-white">
+        <!--Header Area Start-->
+        <header>
+            <div class="header-top">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4">
+                            <span>Des questions ? Contactez-nous</span>
+                        </div>
+
+                        <div class="col-lg-8 col-md-8">
+                            <!-- <div class="header-top-right-" style="display: flex !important; justify-content: space-between !important; align-items: baseline;">
+                                <div class="language-switcher" style="display: inline-block; margin-right: 15px;">
+                                    <ul style="list-style: none; margin: 0; padding: 0; display: flex;">
+                                                                                                                                                                    <li style="margin-left: 10px;">
+                                                <a href="https://Istalb.ac.cd/fr/home" style="color: #fff; font-weight: bold; text-decoration: underline;">
+                                                    FR                                                </a>
+                                            </li>
+                                                                                    <li style="margin-left: 10px;">
+                                                <a href="https://Istalb.ac.cd/en/home" style="color: #fff; ">
+                                                    EN                                                </a>
+                                            </li>
+                                                                                    <li style="margin-left: 10px;">
+                                                <a href="https://Istalb.ac.cd/sw/home" style="color: #fff; ">
+                                                    SW                                                </a>
+                                            </li>
+                                                                                    <li style="margin-left: 10px;">
+                                                <a href="https://Istalb.ac.cd/es/home" style="color: #fff; ">
+                                                    ES                                                </a>
+                                            </li>
+                                                                            </ul>
+                                </div> -->
+                                <span>Email: info@istalb.ac</span>
+
+                                 <!-- BEGINS: AUTO-GENERATED MUSES RADIO PLAYER CODE -->
+                                <script type="text/javascript" src="https://hosted.muses.org/mrp.js"></script>
+                                <script type="text/javascript">
+                                    MRP.insert({
+                                        'url': 'https://stream.zeno.fm/bnuliy5kdhstv',
+                                        'lang': 'fr',
+                                        'volume': 100,
+                                        'autoplay': false,
+                                        'forceHTML5': true,
+                                        'jsevents': true,
+                                        'buffering': 0,
+                                        'title': 'Canal Istalb',
+                                        'welcome': 'Canal Istalb 105.5Fm',
+                                        'wmode': 'transparent',
+                                        'skin': 'faredirfare',
+                                        'width': 269,
+                                        'height': 1
+                                    });
+                                </script> 
+                                <!-- ENDS: AUTO-GENERATED MUSES RADIO PLAYER CODE -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-logo-menu sticker">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-3 col-12">
+                            <div class="logo">
+                                <a href="index.html"><img style="width:200px;" src="img/logoIsta.png" alt="Istalb"></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-9 col-12">
+                            <div class="mainmenu-area pull-right">
+                                <div class="mainmenu d-none d-lg-block">
+                                    <nav>
+                                        <ul id="nav">
+                                            <li class="current"><a href="https://Istalb.ac.cd/fr/home">Accueil</a> </li>
+                                            <li><a href="#">L'Université</a>
+
+                                                <ul class="sub-menu">
+                                                    <li><a href="#">Présentation</a></li>
+                                                    
+                                                    <li><a href="#">Nos Enseignants</a></li>
+                                                </ul>
+                                            </li>
+
+                                            <li><a href="#">Formations</a>
+
+                                                <ul class="sub-menu" style="width:280px!important;">
+                                                    <li><a href="#">Préparatoire Informatique</a></li>
+                                                    <li><a href="#">Informatique</a></li>
+                                                    <li><a href="#">Electronique</a></li>
+                                                    <li><a href="#">Electricité &amp; Tech</a></li>
+                                                    <li><a href="#">Mécanique</a></li>
+                                                    <li><a href="#">Construction</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="#">Recherche</a>
+                                                <ul class="sub-menu">
+                                                    <li><a href="https://www.cno-rdc.com/bibliotheque" target="_blank">Bibliothèque Numérique</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="#">Actualités</a></li>
+                                            <li><a href="#">Infos Etudiants</a>
+                                                <ul class="sub-menu">
+                                                    <li><a href="#">Calendrier Académique</a></li>
+                                                    <li><a href="#">Horaire des cours</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="#">Contact</a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                                <!-- <ul class="header-search">
+                                    <li class="search-menu">
+                                        <i id="toggle-search" class="zmdi zmdi-search"></i>
+                                    </li>
+                                </ul> -->
+                                <!--Search Form-->
+                                <!-- <div class="search">
+                                    <div class="search-form">
+                                        <form id="search-form" action="#">
+                                            <input type="search" placeholder="search_placeholder" name="search" />
+                                            <button type="submit">
+                                                <span><i class="fa fa-search"></i></span>
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div> -->
+                                <!--End of Search Form-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Menu Area start -->
+
+            <div class="mobile-menu-area">
+                <div class="container clearfix">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <div class="mobile-menu">
+                                <nav id="dropdown">
+
+                                    <ul id="nav">
+                                        <li class="current"><a href="#">Accueil</a> </li>
+                                        <li><a href="#">L'Université</a>
+
+                                            <ul class="sub-menu">
+                                                <li><a href="#">Présentation</a></li>
+                                                <li><a href="#">Nos Enseignants</a></li>
+                                            </ul>
+                                        </li>
+
+                                        <li><a href="#">Formations</a>
+
+                                            <ul class="sub-menu" style="width:280px!important;">
+                                                <li><a href="#">Préparatoire Informatique</a></li>
+                                                <li><a href="#">Informatique</a></li>
+                                                <li><a href="#">Electronique</a></li>
+                                                <li><a href="#">Electricité &amp; Tech</a></li>
+                                                <li><a href="#">Mécanique</a></li>
+                                                <li><a href="#">Construction</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">Recherche</a>
+                                            <ul class="sub-menu">
+                                                <li><a href="https://www.cno-rdc.com/bibliotheque" target="_blank">Bibliothèque Numérique</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">Actualités</a></li>
+                                        <li><a href="#">Infos Etudiants</a>
+                                            <ul class="sub-menu">
+                                                <li><a href="#">Calendrier Académique</a></li>
+                                                <li><a href="#">Horaire des cours</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">Contact</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Mobile Menu Area end -->
+        </header>    
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide single-slider" style="background-image: url('assets/img/img4.jpg'); background-size: cover;">
+                    <div class="text-anim">
+                        <h1 style="color: #eee;margin: auto 1em;">L’ISTA L/B, Institut de l'Excellence</h1>
+                    </div>
+                </div>
+
+                <div class="swiper-slide single-slider" style="background-image: url('assets/img/gallerie5.jpeg'); background-size: cover; background-position:center;">
+                    <div class="text-anim">
+                        <h1 style="color: #eee;margin: auto 1em;">&nbsp;Auditoire d&#039; Informatique</h1>
+                    </div>
+                </div>
+                
+                <div class="swiper-slide single-slider" style="background-image: url('assets/img/gallerie1.jpeg'); background-size: cover; background-position:center;">
+                    <div class="text-anim">
+                        <h1 style="color: #eee;margin: auto 1em;">&nbsp;inauguration du laboratoire de géomatique et cartographie numérique</h1>
+                    </div>
+                </div>
+            </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+        <div class="autoplay-progress">
+            <svg viewBox="0 0 48 48">
+                <circle cx="24" cy="24" r="20"></circle>
+            </svg>
+            <span></span>
+        </div>
+    </div>
+    <div class="about-area mt-95">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7">
+                    <div class="about-container">
+                        <h3>Institut Supérieur des Techniques Appliquées (ISTA L/B)</h3>
+                        <p style="text-align: justify;">L’Institut Supérieur des Techniques Appliquées (ISTA L/B) est un établissement public d’enseignement supérieur basé à Boma. Créé en 2016, il forme des ingénieurs capables de répondre aux défis technologiques modernes. Dès son origine, l’institut s’est positionné comme un pôle d’excellence académique et technique. </p>
+                        <p style="text-align: justify;"> Sa mission principale est de former des ingénieurs et des techniciens hautement qualifiés, dotés de compétences pratiques et théoriques solides. L’établissement met un accent particulier sur l’acquisition des compétences techniques, l’esprit d’analyse et la capacité d’innovation.</p>
+
+                        <p style="text-align:justify;"> L’ISTA L/B propose une offre de formation diversifiée couvrant plusieurs filières clés comme l’informatique, l’électricité, l’électronique et la mécanique. Chaque faculté allie théorie et pratique pour préparer efficacement les étudiants au monde professionnel. <br>
+                        L’institut développe également des partenariats académiques et industriels afin de renforcer la qualité de son enseignement et favoriser l’insertion professionnelle de ses diplômés. </p>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <!--About Image Area Start-->
+                    <div class="about-image-area img-full">
+                        <img src="assets/img/img3.jpg" alt="">
+                    </div>
+                    <!--About Image Area End-->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="teachers-area section-padding bg-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-title-wrapper">
+                        <div class="section-title" style="text-align:center;">
+                            <h3>Les membres du comité de gestion actuel</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-12">
+                    <div class="agent mb-30">
+                        <div class="image img-full">
+                            <a class="img" href="enseigant.php"><img src="assets/img/gallerie2.jpeg" alt=""></a>
+                            <div class="social">
+                                <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+                                <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+                                <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+                                <a href="#" class="google"><i class="fa fa-google-plus"></i></a>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <h4 class="title"><a href="enseigant.php">Dr. JUMBIKA</a></h4>
+                            <a href="#" class="phone">+243994193561</a>
+                            <a href="mailto:rectorat@Istalb.ac.cd" class="email"> direction@istalb.ac </a>
+                            <span class="properties">Directeur Général</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-12">
+                    <div class="agent mb-30">
+                        <div class="image img-full">
+                            <a class="img" href="#"><img src="assets/img/gallerie4.jpeg" alt=""></a>
+                            <div class="social">
+                                <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+                                <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+                                <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+                                <a href="#" class="google"><i class="fa fa-google-plus"></i></a>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <h4 class="title"><a href="enseigant.php">Dr. Gauthier NIMI</a></h4>
+                            <a href="#" class="phone">+243994193561</a>
+                            <a href="mailto:sgac@Istalb.ac.cd" class="email"> sgac@istalb.ac </a>
+                            <span class="properties">Secrétaire Général Académique</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-12">
+                    <div class="agent mb-30">
+                        <div class="image img-full">
+                            <a class="img" href="enseigant.php"><img src="assets/img/img10.jpg" alt=""></a>
+                            <div class="social">
+                                <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+                                <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+                                <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+                                <a href="#" class="google"><i class="fa fa-google-plus"></i></a>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <h4 class="title"><a href="enseigant.php">PO NZABADORA</a></h4>
+                            <a href="#" class="phone">+243994193561</a>
+                            <a href="mailto:sgr@Istalb.ac.cd" class="email"> sgr@Istalb.ac.cd </a>
+                            <span class="properties">Secrétaire Général à la Recherche</span>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="col-lg-3 col-md-6 col-12">
+                    <div class="agent mb-30">
+                        <div class="image img-full">
+                            <a class="img" href="enseigant.php"><img src="assets/img/img11.jpg" alt=""></a>
+                            <div class="social">
+                                <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+                                <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+                                <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+                                <a href="#" class="google"><i class="fa fa-google-plus"></i></a>
+                            </div>
+                        </div>
+                        <div class="content">
+
+                            <h4 class="title"><a href="enseigant.php">PhD Janvier KASIWA</a></h4>
+                            <a href="#" class="phone">+243994193561</a>
+                            <a href="mailto:sgad@Istalb.ac.cd" class="email"> sgad@Istalb.ac.cd </a>
+                            <span class="properties">Secrétaire Général Administratif</span>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="latest-area section-padding bg-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-title-wrapper">
+                        <div class="section-title">
+                            <h3>NOS DERNIERES NOUVELLES</h3>
+                            <p>Restez connecté pour suivre nos dernières actualités</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-12">
+                    <div class="single-latest-item">
+                        <div class="single-latest-image">
+                            <a href="https://Istalb.ac.cd/fr/blog-details/l-Istalb-l-honneur-le-professeur-trsor-muhindo-makunya-publie-un-ouvrage-de-rfrence-sur-la-justice-constitutionnelle-en-afrique"><img src="assets/img/img5.jpg" alt="L’Istalb à l’honneur : le Professeur Trésor Muhindo Makunya publie un ouvrage de référence sur la justice constitutionnelle en Afrique"></a>
+                        </div>
+                        <div class="single-latest-text">
+                            <h3><a href="https://Istalb.ac.cd/fr/blog-details/l-Istalb-l-honneur-le-professeur-trsor-muhindo-makunya-publie-un-ouvrage-de-rfrence-sur-la-justice-constitutionnelle-en-afrique">L’Istalb à l’honneur : le Professeur Trésor Muhindo Makunya publie un ouvrage de référence sur la justice constitutionnelle en Afrique</a></h3>
+                            <div class="single-item-comment-view">
+                                <span><i class="zmdi zmdi-calendar-check"></i>2026-04-20 23:12:14</span>
+                                <!-- <span><i class="zmdi zmdi-eye"></i>59</span> -->
+                                <span><i class="zmdi zmdi-comments"></i>19</span>
+                            </div>
+                            <h5>Un rayonnement scientifique au service des droits humainsL’ISTA L/B (Istalb) confirme s...                                </h5>
+                            <a href="https://Istalb.ac.cd/fr/blog-details/l-Istalb-l-honneur-le-professeur-trsor-muhindo-makunya-publie-un-ouvrage-de-rfrence-sur-la-justice-constitutionnelle-en-afrique" class="button-default">En savoir plus</a>
+                        </div>
+                    </div>
+                </div>
+                                    <div class="col-lg-4 col-md-6 col-12">
+                        <div class="single-latest-item">
+                            <div class="single-latest-image">
+                                <a href="https://Istalb.ac.cd/fr/blog-details/appel-contributions-numro-spcial-des-annales-de-l-universit-de-goma"><img src="assets/img/img6.jpg" alt="Appel à contributions – Numéro spécial des Annales de l’ISTA L/B"></a>
+                            </div>
+                            <div class="single-latest-text">
+                                <h3><a href="https://Istalb.ac.cd/fr/blog-details/appel-contributions-numro-spcial-des-annales-de-l-universit-de-goma">Appel à contributions – Numéro spécial des Annales de l’ISTA L/B</a></h3>
+                                <div class="single-item-comment-view">
+                                    <span><i class="zmdi zmdi-calendar-check"></i>2026-04-15 16:21:01</span>
+                                    <!-- <span><i class="zmdi zmdi-eye"></i>59</span> -->
+                                    <span><i class="zmdi zmdi-comments"></i>1</span>
+                                </div>
+                                <h5>Dans le cadre de la publication d’un numéro spécial de sa revue scientifique Annales, l’Univer...                                </h5>
+                                <a href="https://Istalb.ac.cd/fr/blog-details/appel-contributions-numro-spcial-des-annales-de-l-universit-de-goma" class="button-default">En savoir plus</a>
+                            </div>
+                        </div>
+                    </div>
+                                    <div class="col-lg-4 col-md-6 col-12">
+                        <div class="single-latest-item">
+                            <div class="single-latest-image">
+                                <a href="https://Istalb.ac.cd/fr/blog-details/Istalb-tudiants-et-entrepreneurs-initis-l-usage-du-bitcoin-dans-les-transactions-pratiques-grce-au-partenariat-Istalb-bridgesats"><img src="assets/img/img8.jpg" alt="Istalb : étudiants et entrepreneurs initiés à l’usage du Bitcoin dans les transactions pratiques grâce au partenariat Istalb–Bridgesats"></a>
+                            </div>
+                            <div class="single-latest-text">
+                                <h3><a href="https://Istalb.ac.cd/fr/blog-details/Istalb-tudiants-et-entrepreneurs-initis-l-usage-du-bitcoin-dans-les-transactions-pratiques-grce-au-partenariat-Istalb-bridgesats">Istalb : étudiants et entrepreneurs initiés à l’usage du Bitcoin dans les transactions pratiques grâce au partenariat Istalb–Bridgesats</a></h3>
+                                <div class="single-item-comment-view">
+                                    <span><i class="zmdi zmdi-calendar-check"></i>2026-04-02 07:29:07</span>
+                                    <!-- <span><i class="zmdi zmdi-eye"></i>59</span> -->
+                                    <span><i class="zmdi zmdi-comments"></i>0</span>
+                                </div>
+                                <h5>Dans le cadre des activités mensuelles inscrites dans le partenariat entre l’ISTA L/B ...                                </h5>
+                                <a href="https://Istalb.ac.cd/fr/blog-details/Istalb-tudiants-et-entrepreneurs-initis-l-usage-du-bitcoin-dans-les-transactions-pratiques-grce-au-partenariat-Istalb-bridgesats" class="button-default">En savoir plus</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+    <!--End of Latest News Area-->
+
+    
+    <div class="fun-factor-area fun-bg-img" style="background-image: url('assets/img/hero.jpeg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-6 col-12">
+                <div class="single-fun-factor mb-30">
+                    <h2><span class="counter">50</span>+</h2>
+                                        <h4>Personnel</h4>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-12">
+                <div class="single-fun-factor mb-30">
+                    <h2><span class="counter">2500</span>+</h2>
+                                        <h4>Étudiants</h4>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-12">
+                <div class="single-fun-factor mb-30">
+                    <h2><span class="counter">6</span>+</h2>
+                                        <h4>Filières</h4>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-12">
+                <div class="single-fun-factor mb-30">
+                    <h2><span class="counter">10</span>+</h2>
+                                        <h4>Années d'existence</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <!-- <div class="contact-area pt-100 pb-100">
+     <div class="container">
+         <div class="row g-0">
+             <div class="col-md-12 col-lg-6 blue-bg">
+                 <div class="edubuzz-address">
+                        <h2 class="contact-title">Vous pouvez nous contacter</h2>
+                        <p style="text-align: justify;">L'ISTA L/B au centre de la formation, avec comme vocation de recevoir les enfants de toutes les couches sociales, sans distinction d’obédience d'idéologie ou religieuse pour une formation des cadres de conception dans les domaines les plus divers de la vie nationale qu'internationale.</p>
+                     <ul>
+                        <li><i class="fa fa-fax"></i> Adresse : No 43 Rue Eugène SERUFULI, quartier Katindo, commune de Goma</li>
+                        <li><i class="fa fa-phone"></i> Téléphone : +243 994 193 561</li>
+                        <li><i class="fa fa-envelope-o"></i> Mail: info@Istalb.ac.cd</li>
+                     </ul>
+                     <div class="contact-social">
+                                                  <h3><strong>Egalement sur</strong></h3>
+                         <ul>
+                             <li><a href="https://web.facebook.com/profile.php?id=100076504531653"><i class="zmdi zmdi-facebook"></i></a></li>
+                             <li><a href="https://twitter.com/Istalb_RDC"><i class="zmdi zmdi-twitter"></i></a></li>
+                             <li><a href="https://www.linkedin.com/company/92829027/admin/feed/posts/"><i class="zmdi zmdi-linkedin"></i></a></li>
+                             <li><a href="#"><i class="zmdi zmdi-google-plus"></i></a></li>
+                             <li><a href="#"><i class="zmdi zmdi-instagram"></i></a></li>
+                         </ul>
+                     </div>
+                 </div>
+             </div>
+             <div class="col-md-12 col-lg-6 yellow-bg" style="background-color:#000000;">
+                 <div class="contact-form-wrap">
+                                          <h2 class="contact-title">ENVOYEZ VOTRE MESSAGE</h2>
+                     <form id="contact-form_" action="https://Istalb.ac.cd/admin-Istalb/includes/contact.php" method="post">
+                     <div class="row">
+                     <div class="col-12">
+                     <div class="contact-form-style mb-20">
+                     <input name="name" id="name" placeholder="Noms*" type="text" required>
+                         <small id="name-error" class="text-danger"></small>
+                         </div>
+                     </div>
+                     <div class="col-12">
+                     <div class="contact-form-style mb-20">
+                         <input name="phone" id="phone" placeholder="Téléphone*" type="text" required>
+                             <small id="phone-error" class="text-danger"></small>
+                         </div>
+                     </div>
+                     <div class="col-12">
+                     <div class="contact-form-style mb-20">
+                                    <input name="email" id="email" placeholder="Email*" type="email" required>
+                         <small id="email-error" class="text-danger"></small>
+                     </div>
+
+                         <div class="contact-form-style mb-20">
+                             <input name="sujet" id="sujet" placeholder="Sujet*" type="text" required>
+                         <small id="sujet-error" class="text-danger"></small>
+                     </div>
+                     </div>
+                     <div class="col-md-12">
+                     <div class="contact-form-style">
+                     <textarea name="message" id="message" placeholder="Ecrire votre message ici ..." required></textarea>
+                     <small id="message-error" class="text-danger d-block mb-2"></small>
+                         <button class="button-default" type="submit" id="btn-submit">Envoyer</span></button>
+                         </div>
+                             <div class="alert alert-info alert-dismissible fade show mt-3 d-none" id="message_" role="alert">
+                                     <strong>Votre message a été envoyé avec succès.</strong>
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                     <p class="form-messege" id="form-message"></p>
+                 </div>
+             </div>
+         </div>
+     </div>
+ </div> -->
+ <!--Contact Area End-->
 <script>
-const gallery = document.getElementById('gallery');
+  window.i18nContact = {
+    required_name: "Le champ Noms est requis.",
+    required_phone: "Le champ T\u00e9l\u00e9phone est requis.",
+    required_email: "Le champ Email est requis.",
+    required_subject: "Le champ Sujet est requis.",
+    required_message: "Le champ Message est requis.",
+    error_generic: "Une erreur s'est produite lors de l'envoi du formulaire.",
+    success: "Votre message a \u00e9t\u00e9 envoy\u00e9 avec succ\u00e8s.",
+    sending: "Envoi... ",
+    sent: "Envoy\u00e9",
+    try_again: "R\u00e9essayer"  };
+</script>    
+<footer>
+    <!--Newsletter Area Start-->
+    <div class="newsletter-area mt-5" style="background-color:#000000;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-md-5">
+                    <div class="newsletter-content">
+                        <h3>SOUSCRIRE</h3>
+                        <h2>À NOTRE NEWSLETTER</h2>
+                    </div>
+                </div>
+                <div class="col-lg-7 col-md-7">
+                    <div class="newsletter-form angle">
+                        <form action="#" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="mc-form footer-newsletter fix">
+                            <div class="subscribe-form">
+                                <input id="mc-email" type="email" autocomplete="off" placeholder="Entrez votre adresse email ici">
+                                <button id="mc-submit" type="submit">S'inscrire</button>
+                            </div>
+                        </form>
+                        <!-- mailchimp-alerts Start -->
+                        <div class="mailchimp-alerts text-centre fix pull-right p-1">
+                            <div class="alert alert-success alert-dismissible fade show d-none" role="alert" id="mailchimp-alerts">
+                                <strong>Inscription réussie ! Merci de vous être abonné à notre newsletter.</strong>
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                        </div>
+                        <!-- mailchimp-alerts end -->
+                        <script>
+                            window.i18nNewsletter = {
+                                sending: "Inscription...",
+                                subscribed: "Inscrit",
+                                try_again: "R\u00e9essayer"                            
+                            };
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--End of Newsletter Area-->
+    <!--Footer Widget Area Start-->
+    <div class="footer-widget-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="single-footer-widget">
+                        <div class="footer-logo">
+                            <a href="#"><img style="width:200px;" src="img/logoFooter.png" alt="Istalb"></a>
+                        </div>
+                        <p style="text-align:justify;">L'Unstitut supérieur par excellence de la province du Kongo Central. </p>
+                        <div class="social-icons">
+                            <a href="https://web.facebook.com/profile.php?id=100076504531653"><i class="zmdi zmdi-facebook"></i></a>
+                            <a href="https://twitter.com/Istalb_RDC"><i class="zmdi zmdi-twitter"></i></a>
+                            <a href="https://www.linkedin.com/company/92829027/admin/feed/posts/"><i class="zmdi zmdi-linkedin"></i></a>
+                            <a href="#"><i class="zmdi zmdi-google-plus"></i></a>
+                            <a href="#"><i class="zmdi zmdi-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="single-footer-widget">
+                        <h3>Vous pouvez nous contacter</h3>
+                        <a href="tel:0994193561"><i class="fa fa-phone"></i>+243 820 908 486</a>
+                        <span><i class="fa fa-envelope"></i>info@Istalb.ac.cd</span>
+                        <span><i class="fa fa-globe"></i>www.Istalb.ac</span>
+                        <span><i class="fa fa-map-marker"></i>Adresse : No 546, Avenue Kasa-Vubu, Térritoire de Muanda</span>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="single-footer-widget">
+                        <h3>Liens utiles</h3>
+                        <ul class="footer-list">
+                            <li><a href="#">Présentation</a></li>
+                            <li><a href="#">Inscription</a></li>
+                            <li><a href="#">Actualités</a></li>
+                            <li><a href="#">S'informer</a></li>
+                            <li><a href="#">Galerie</a></li>
+                            <li><a href="#">Contact</a></li>
 
-let isDown = false;
-let startX;
-let scrollLeft;
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="single-footer-widget">
+                        <h3>Liens utiles</h3>
 
-gallery.addEventListener('mousedown', (e) => {
-  isDown = true;
-  gallery.classList.add('cursor-grabbing');
-  startX = e.pageX - gallery.offsetLeft;
-  scrollLeft = gallery.scrollLeft;
-});
 
-gallery.addEventListener('mouseleave', () => {
-  isDown = false;
-  gallery.classList.remove('cursor-grabbing');
-});
+                        <ul class="footer-list">
+                            <li><a href="#" target="_blank">Revues</a></li>
+                            <li><a href="#">Nos Enseignants</a></li>
+                            <li><a href="https://www.cno-rdc.com/bibliotheque" target="_blank">Bibliothèque Numérique</a></li>
+                        </ul>
 
-gallery.addEventListener('mouseup', () => {
-  isDown = false;
-  gallery.classList.remove('cursor-grabbing');
-});
 
-gallery.addEventListener('mousemove', (e) => {
-  if (!isDown) return;
-  e.preventDefault();
-  const x = e.pageX - gallery.offsetLeft;
-  const walk = (x - startX) * 2; // vitesse
-  gallery.scrollLeft = scrollLeft - walk;
-});
-</script>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--End of Footer Widget Area-->
+    <!--Footer Area Start-->
+    <div class="footer-area">
+        <div class="container">
+            <div class="row justify-content-center text-center">
+                <span>Copyright &copy; ISTA L/B 2026. Tous droits réservés.</span>
+            </div>
+        </div>
+    </div>
+    <!--End of Footer Area-->
+</footer>    
+</div>
+    <!--End of Bg White-->
+    </div>
+    <!--End of Main Wrapper Area-->
+
+    
+    <!-- jquery
+		============================================ -->
+    <script src="https://Istalb.ac.cd/js/vendor/modernizr-3.6.0.min.js"></script>
+    <!-- CDN modernizr 3.6.0 -->
+    <script src="https://"></script>
+    <script src="https://Istalb.ac.cd/js/vendor/jquery-3.6.0.min.js"></script>
+    <!-- CDN jQuery 3.6.0 -->
+     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+    <script src="assets/js/jquery-migrate-3.3.2.min.js"></script>
+
+    <!-- popper JS
+		============================================ -->
+    <script src="assets/js/popper.min.js"></script>
+    <!-- CDN Popper.js 2.11.8 -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+
+    <!-- bootstrap JS
+		============================================ -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- CDN Bootstrap 5.3.0 JS -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script> -->
+
+    <!-- AJax Mail JS
+		============================================ -->
+    <script src="assets/js/ajax-mail.js"></script>
+
+    <!-- plugins JS
+		============================================ -->
+    <script src="assets/js/plugin.js"></script>
+
+    <!-- main JS
+		============================================ -->
+    <script src="assets/js/main.js"></script>
+    <script src="https://Istalb.ac.cd/js/contact.js"></script>
+    <script src="https://Istalb.ac.cd/js/newsletter.js"></script>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const progressCircle = document.querySelector('.autoplay-progress svg');
+            const progressContent = document.querySelector('.autoplay-progress span');
+
+            const swiper = new Swiper('.mySwiper', {
+                effect: 'slide',
+                speed: 800,
+                spaceBetween: 30,
+                loop: true,
+                centeredSlides: true,
+                observer: true,
+                observeParents: true,
+                watchSlidesProgress: true,
+                autoplay: {
+                    delay: 4000,
+                    disableOnInteraction: false,
+                    pauseOnMouseEnter: true
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev'
+                },
+                on: {
+                    init() {
+                        if (progressCircle) progressCircle.style.setProperty('--progress', 0);
+                        if (progressContent) progressContent.textContent = '';
+                    },
+                    autoplayTimeLeft(s, time, progress) {
+                        if (progressCircle) {
+                            progressCircle.style.setProperty('--progress', 1 - progress);
+                        }
+                        if (progressContent) {
+                            progressContent.textContent = `${Math.ceil(time / 1000)}s`;
+                        }
+                    },
+                    slideChange() {
+                        document.querySelectorAll('.swiper-slide').forEach(el => el.classList.remove('slide-animate'));
+                        const active = document.querySelector('.swiper-slide-active');
+                        if (active) active.classList.add('slide-animate');
+                    }
+                }
+            });
+        });
+    </script>
 </body>
+
 </html>
